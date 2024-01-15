@@ -13,42 +13,44 @@
             flex-direction: column;
         }
         img{width: 50%;}
+                @keyframes typing {
+            0% { width: 0; white-space: nowrap; }
+            90%{ width: 80%; white-space: nowrap; }
+            100% { width: 80%; white-space: normal; }
+        }  
+
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: orange; }
+        }
+        h1{font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;}
+        .typeAct{
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                overflow: hidden; 
+                margin: 0 auto; 
+                letter-spacing: .15em; 
+                animation: typing 2s steps(20, end), blink-caret .75s step-end 3;
+        }
     </style>
 </head>
 <body>
     <header>
         <h1>Jing-An Chen</h1>
-        <style>
-            
-            @keyframes typing {
-                0% { width: 0; white-space: nowrap; }
-                90%{ width: 80%; white-space: nowrap; }
-                100% { width: 80%; white-space: wrap; }
-            }  
-            
-            @keyframes blink-caret {
-                from, to { border-color: transparent }
-                50% { border-color: orange; }
-            }
-            h1{font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;}
-            .typeAct{
-                    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-                    overflow: hidden; 
-                    margin: 0 auto; 
-                    letter-spacing: .15em; 
-                    animation: typing 2s steps(20, end), blink-caret .75s step-end 3;
-            }
-        </style>
     </header>
     <main>
         <div>
             <img src="broccoli-and-me.jpg" alt="my mascot and me">
-            <ul>
-                <li class="typeAct"><strong>Student Number:</strong> 041100128</li>
-                <li class="typeAct"><strong>Program Name:</strong> Interactive Media Design</li>
-                <li class="typeAct"><strong>Course Code and Name:</strong>24W_MTM6201_040 Web Development II</li>
-                <li class="typeAct"><strong>Fun Fact:</strong>My nickname is Broccoli.</li>
-            </ul>
+            <!-- I used ul tag, which is wrong, so I changed to dl tag -->
+            <dl class="typeAct">
+                <dt><strong>Student Number:</strong></dt>
+                <dd>041100128</dd>
+                <dt><strong>Program Name:</strong></dt>
+                <dd>Interactive Media Design</dd>
+                <dt><strong>Course Code and Name:</strong></dt>
+                <dd>24W_MTM6201_040 Web Development II</dd>
+                <dt><strong>Fun Fact:</strong></dt>
+                <dd>My nickname is Broccoli.</dd>
+            </dl>
         </div>
     </main>
     <footer>
